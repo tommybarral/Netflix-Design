@@ -24,7 +24,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
     super.dispose();
   }
 
-  Future<void> signIn() async {
+  Future<void> _signIn() async {
     // Navigator.of(context).push(MaterialPageRoute(builder: (context) {});
     Navigator.push(context, MaterialPageRoute(builder: (context) => const ContentScreen())
     );
@@ -102,8 +102,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                       }, child: const Text('Ok'),),
                     ],
                   ));
-                  return;
+                  //return;
                 }
+                // IGNORE THE VERIFICATION SIGNIN / SIGNUP FOR TESTING REASONS.
+                _signIn();
               },
             ),
           ),
