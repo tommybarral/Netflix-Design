@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+/*
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+ */
 import './content_screen.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -8,26 +12,43 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
-  
+
+  //final FirebaseAuth _auth = FirebaseAuth.instance;
+
   int _selectedIndex = 0;
   final TextEditingController _nameController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
-  @override
-  void initState() {
-    super.initState();
-  }
 
-  @override
-  void dispose() {
-    super.dispose();
+
+    /*
+  Future<void> _register() async {
+    final User user = (
+        await _auth.createUserWithEmailAndPassword(email: _emailController.text, password: _passwordController.text)
+    ).user;
+      if (user != null) {
+        Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => WelcomeScreen()),
+        );
+      }
   }
+    */
 
   Future<void> _signIn() async {
-    // Navigator.of(context).push(MaterialPageRoute(builder: (context) {});
-    Navigator.push(context, MaterialPageRoute(builder: (context) => const ContentScreen())
-    );
+    /*
+    final User user = (await _auth.signInWithEmailAndPassword(email: _emailController.text, password: _passwordController.text)).user;
+    if (user != null) {
+    Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => ContentScreen(),
+        ),
+      );
+    }
+    */
+    //Navigator.of(context).push(MaterialPageRoute(builder: (context) {});
+    Navigator.push(context, MaterialPageRoute(builder: (context) => const ContentScreen()));
   }
 
   Widget _renderSignIn() {
@@ -223,6 +244,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ));
                   return;
                 }
+                //_register();
               },
             ),
           ),

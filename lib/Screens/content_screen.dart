@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:netflix_design/Models/entertainment.dart';
 import '../Models/dummy_data.dart';
 
 class ContentScreen extends StatefulWidget {
@@ -13,9 +12,9 @@ class _ContentScreenState extends State<ContentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xff333333),
+      backgroundColor: const Color(0xff333333),
       appBar: AppBar(
-        backgroundColor: Color(0xff333333),
+        backgroundColor: const Color(0xff333333),
         leading: IconButton(
             onPressed: () {},
             icon: const Icon(
@@ -31,7 +30,7 @@ class _ContentScreenState extends State<ContentScreen> {
         elevation: 0.0,
         actions: [
           Container(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             height: 40,
             child: Image.network('https://toppng.com/uploads/preview/netflix-logo-png-11593869496jqso5gxgsy.png'),
           ),
@@ -40,23 +39,22 @@ class _ContentScreenState extends State<ContentScreen> {
       body: Stack(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 20),
+            padding: const EdgeInsets.only(left: 20),
             child: ListView(
               children: [
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Container(
                   height: 200,
                   child: ListView.builder(
                     itemCount: dummyMovies.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      Entertainment dummyData = dummyMovies[index];
                       return GestureDetector(
                         onTap: () {},
                         child: Container(
                           height: 150,
                           width: 220,
-                          margin: EdgeInsets.only(right: 10),
+                          margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             image: DecorationImage(
@@ -69,9 +67,9 @@ class _ContentScreenState extends State<ContentScreen> {
                     },
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
-                  children: [
+                  children: const [
                     Text(
                       'Continue watching',
                       style: TextStyle(
@@ -97,7 +95,7 @@ class _ContentScreenState extends State<ContentScreen> {
                       return GestureDetector(
                         onTap: () {},
                         child: Container(
-                          margin: EdgeInsets.only(right: 10),
+                          margin: const EdgeInsets.only(right: 10),
                           child: Stack(
                             children: [
                               Container(
@@ -117,7 +115,7 @@ class _ContentScreenState extends State<ContentScreen> {
                                 left: 0,
                                 child: Container(
                                   height: 40,
-                                  decoration: BoxDecoration(
+                                  decoration: const BoxDecoration(
                                     borderRadius: BorderRadius.only(
                                         bottomLeft: Radius.circular(15),
                                         bottomRight: Radius.circular(15),
@@ -126,7 +124,7 @@ class _ContentScreenState extends State<ContentScreen> {
                                   ),
                                   child: Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    children: [
+                                    children: const [
                                       Text('Play', style: TextStyle(color: Colors.black, fontSize: 20),),
                                       SizedBox(width: 10,),
                                       Icon(Icons.play_circle_filled, color: Colors.black,),
@@ -134,7 +132,7 @@ class _ContentScreenState extends State<ContentScreen> {
                                   ),
                                 ),
                               ),
-                              Positioned(
+                              const Positioned(
                                 bottom: 35,
                                 right: 0,
                                 left: 0,
@@ -143,7 +141,7 @@ class _ContentScreenState extends State<ContentScreen> {
                                   thickness: 4,
                                 ),
                               ),
-                              Positioned(
+                              const Positioned(
                                 bottom: 35,
                                 right: 40,
                                 left: 0,
@@ -159,9 +157,9 @@ class _ContentScreenState extends State<ContentScreen> {
                     },
                   ),
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
-                  children: [
+                  children: const [
                     Text(
                       'My List',
                       style: TextStyle(
@@ -177,20 +175,19 @@ class _ContentScreenState extends State<ContentScreen> {
                     ),
                   ],
                 ),
-                SizedBox(height: 10,),
+                const SizedBox(height: 10,),
                 Container(
                   height: 200,
                   child: ListView.builder(
                     itemCount: myList.length,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index) {
-                      Entertainment dummyData = myList[index];
                       return GestureDetector(
                         onTap: () {},
                         child: Container(
                           height: 300,
                           width: 150,
-                          margin: EdgeInsets.only(right: 10),
+                          margin: const EdgeInsets.only(right: 10),
                           decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(15),
                             image: DecorationImage(
